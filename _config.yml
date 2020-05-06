@@ -15,7 +15,7 @@ title:            Alexander Spaulding
 tagline:          'Full-Stack Developer'
 description:      'A full stack Developer proficent in web and software technologies.'
 url:              
-baseurl:          ~/
+baseurl:          /
 
 author:
   name:           'Alexander Spaulding'
