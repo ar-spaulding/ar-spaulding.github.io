@@ -1,0 +1,24 @@
+/* Style the navigation menu */
+.hamburger {
+  overflow: hidden;
+  position: relative;
+}
+
+.hamburger-header{
+  min-height: 2.5em;
+}
+
+.hamburger-header .sidebar-about {
+  float: left;
+  font-size: 1.5em;
+}
+
+.hamburger-header .icon {
+  float: right;
+  font-size: 1.5em;
+}
+
+/* Hide the links inside the navigation menu (except for logo/home) */
+.hamburger .hamburger-content {
+  display: none;
+}

@@ -1,0 +1,43 @@
+
+/* Hide and Show different elements based on desktop or mobile */
+.desktop{
+    display: none;
+}   @media (min-width: 48em){
+        .desktop{
+            display: inherit !important;
+        }
+    }
+
+.mobile{
+    display: inherit;
+}   @media (min-width: 48em){
+        .mobile{
+            display: none !important;
+        }
+    }
+
+.pages {
+    position: relative;
+}
+
+.copyright {
+    display: none;
+}  @media (min-width: 48em) {
+    .copyright {
+        position: absolute;
+        bottom: 0;
+    }
+  }
+
+.footer {
+    display: inherit;
+    text-align: center;
+    padding: 2rem 1rem;
+    color: rgba(255,255,255,.5);
+    background-color: #202020;
+  }
+  @media (min-width: 48em) {
+    .footer {
+        display: none;
+    }
+  }

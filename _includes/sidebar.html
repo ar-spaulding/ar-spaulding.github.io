@@ -1,5 +1,5 @@
 <div class="sidebar">
-  <div class="container sidebar-sticky">
+  <div class="desktop container">
     <div class="sidebar-about">
       <h1>
         <a href="{{ site.baseurl }}">
@@ -8,27 +8,31 @@
       </h1>
       <p class="lead">{{ site.description }}</p>
     </div>
+    {% include pages.html %}
+    <p class="copyright">&copy; {{ site.time | date: '%Y' }}. All rights reserved.</p>
+  </div>
+  <div class="mobile container">
+      <!-- Load an icon library to show a hamburger menu (bars) on small screens -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <nav class="sidebar-nav">
-      <a class="sidebar-nav-item{% if page.url == site.baseurl %} active{% endif %}" href="{{ site.baseurl }}">Home</a>
+      <!-- Top Navigation Menu -->
+      <div class="hamburger">
+        <div class="hamburger-header">
+          <div class="sidebar-about">
+            <a href="{{ site.baseurl }}">
+              {{ site.title }}
+            </a>
+          </div>
+          <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+          <a href="javascript:void(0);" class="icon" onclick="hamburgerToggle()">
+            <i class="fa fa-bars"></i>
+          </a>
+      </div>
 
-      {% comment %}
-        The code below dynamically generates a sidebar nav of pages with
-        `layout: page` in the front-matter. See readme for usage.
-      {% endcomment %}
-
-      {% assign pages_list = site.pages %}
-      {% for node in pages_list %}
-        {% if node.title != null %}
-          {% if node.layout == "page" %}
-            <a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}" href="{{ node.url }}">{{ node.title }}</a>
-          {% endif %}
-        {% endif %}
-      {% endfor %}
-
-      <span class="sidebar-nav-item">Currently v{{ site.version }}</span>
-    </nav>
-
-    <p>&copy; {{ site.time | date: '%Y' }}. All rights reserved.</p>
+        <!-- Navigation Content -->
+        <div class="hamburger-content">
+          {% include pages.html %}
+        </div>
+      </div>
   </div>
 </div>
